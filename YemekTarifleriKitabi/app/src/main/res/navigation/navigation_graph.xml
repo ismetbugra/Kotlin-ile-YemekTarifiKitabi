@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragment_liste">
+
+    <fragment
+        android:id="@+id/fragment_liste"
+        android:name="com.example.yemektariflerikitabi.fragment_liste"
+        android:label="fragment_liste"
+        tools:layout="@layout/fragment_liste" >
+        <action
+            android:id="@+id/action_fragment_liste_to_fragment_tarif"
+            app:destination="@id/fragment_tarif" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_tarif"
+        android:name="com.example.yemektariflerikitabi.fragment_tarif"
+        android:label="fragment_tarif"
+        tools:layout="@layout/fragment_tarif" >
+        <action
+            android:id="@+id/action_fragment_tarif_to_fragment_liste"
+            app:destination="@id/fragment_liste" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
